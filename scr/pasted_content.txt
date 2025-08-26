@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saúde e Bem Estar - 10 Passos para Desligar a Azia</title>
+<style>
+/* Reset e tipografia */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabeçalho */
+header {
+  background: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  animation: fadeIn 2s ease;
+}
+header img { max-width: 120px; margin-bottom: 20px; }
+header h1 { font-size: 2.5rem; margin-bottom: 15px; }
+header p { font-size: 1.2rem; margin-bottom: 20px; }
+header a {
+  background: #ff5722;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+header a:hover { background: #e64a19; }
+
+/* Seções */
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeUp 1.5s ease;
+}
+
+/* Grid de cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+.card img { max-width: 80px; margin-bottom: 15px; }
+
+/* Timeline / Transformação */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Botões de ação */
+.button {
+  display: inline-block;
+  background: #ff5722;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.button:hover { background: #e64a19; }
+
+/* Rodapé */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+footer a { color: #fff; text-decoration: underline; }
+
+/* Preço destaque */
+.price { font-size: 1.5em; color: #ff5722; margin: 15px 0; }
+</style>
+</head>
+<body>
+
+<!-- Cabeçalho Hero -->
+<header>
+    <img src="logo.png" alt="Logo Saúde e Bem Estar">
+    <h1>Saúde e Bem Estar: Como Pequenas Mudanças Diárias Podem Desligar a Azia Crônica e Devolver o Prazer de Comer em Menos de 30 Dias</h1>
+    <p>“Liberte-se da queimação e recupere o prazer de comer com nosso método em 30 dias.”</p>
+    <a href="https://pay.cakto.com.br/z2ybhvn_525824">Saiba mais →</a>
+</header>
+
+<!-- Seção O Problema -->
+<section>
+    <h2>O Problema</h2>
+    <p>Aquela queimação que sobe pela garganta não é ‘normal’. É um sinal de alerta do seu sistema digestivo.</p>
+    <ul>
+        <li>Noites mal dormidas</li>
+        <li>Evitar pratos favoritos</li>
+        <li>Dependência de antiácidos</li>
+    </ul>
+</section>
+
+<!-- Seção A Verdade que Poucos Contam -->
+<section>
+    <h2>A Verdade que Poucos Contam</h2>
+    <p>Antiácidos não curam. Eles apenas silenciam o alarme por alguns instantes — enquanto a causa real continua danificando seu esôfago.</p>
+    <p>A boa notícia? Você pode desligar esse alarme para sempre com pequenas mudanças diárias!</p>
+</section>
+
+<!-- Seção 10 Passos com ícones -->
+<section>
+    <h2>Os 10 Passos para uma Vida Livre da Azia</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/meal.png" alt="Refeições fracionadas">
+            <h3>1. Fracione suas refeições</h3>
+            <p>Comer pequenas porções a cada 3 horas reduz a pressão sobre o estômago e minimiza o refluxo.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/bed.png" alt="Elevação da cabeceira">
+            <h3>2. Elevação da cabeceira</h3>
+            <p>Dormir com a cabeça elevada 15–20 cm previne o refluxo noturno.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/no-coffee.png" alt="Identifique gatilhos">
+            <h3>3. Identifique seus gatilhos</h3>
+            <p>Evite café, chocolate, álcool, frituras ou descubra os seus pessoais.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/tea.png" alt="Chás calmantes">
+            <h3>4. Chás calmantes</h3>
+            <p>Gengibre, camomila e erva-doce aliviam náuseas e acalmam o sistema digestivo.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/clock.png" alt="Timing das refeições">
+            <h3>5. Timing das refeições</h3>
+            <p>Não coma 3 horas antes de dormir e mastigue devagar para facilitar a digestão.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/apple.png" alt="Alimentos alcalinizantes">
+            <h3>6. Alimentos alcalinizantes</h3>
+            <p>Banana, maçã, batata-doce e vegetais verdes ajudam a neutralizar a acidez.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/water.png" alt="Hidratação inteligente">
+            <h3>7. Hidratação inteligente</h3>
+            <p>Beba água entre as refeições — não durante — para não diluir os sucos digestivos.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/scale.png" alt="Controle do peso">
+            <h3>8. Controle do peso</h3>
+            <p>Manter peso saudável reduz a pressão abdominal que empurra o ácido para cima.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/walking.png" alt="Movimento pós-refeição">
+            <h3>9. Movimento pós-refeição</h3>
+            <p>Caminhadas leves ajudam na digestão e evitam o refluxo.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/relax.png" alt="Gestão do estresse">
+            <h3>10. Gestão do estresse</h3>
+            <p>Técnicas de relaxamento reduzem a produção excessiva de ácido causada pela ansiedade.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Transformação em 30 Dias -->
+<section>
+    <h2>Sua Transformação em 30 Dias</h2>
+    <div class="timeline">
+        <p><strong>Primeiros 7 Dias:</strong> Redução da queimação noturna — noites mais tranquilas.</p>
+        <p><strong>Após 14 Dias:</strong> Menor dependência de antiácidos, mais energia e disposição.</p>
+        <p><strong>Após 21 Dias:</strong> Retorno gradual aos seus pratos favoritos — com confiança e sem medo.</p>
+        <p><strong>Após 30 Dias:</strong> Transformação completa: vida sem azia, sono reparador e prazer de comer restaurado.</p>
+    </div>
+</section>
+
+<!-- Depoimentos -->
+<section>
+    <h2>Depoimentos Reais</h2>
+    <div class="grid">
+        <div class="card">
+            <p><strong>Ana Claudia, 42 anos:</strong> “Sofria com refluxo há anos. Em menos de um mês seguindo os 10 passos, finalmente posso comer pizza e dormir tranquila. Mudou minha vida!”</p>
+        </div>
+        <div class="card">
+            <p><strong>Carlos Eduardo, 38 anos:</strong> “As náuseas constantes acabaram! Agora como de tudo e durmo como um bebê.”</p>
+        </div>
+        <div class="card">
+            <p><strong>Mariana, 29 anos:</strong> “Durante a gravidez, as náuseas eram insuportáveis. Os 10 passos me salvaram! Recomendo para todas as gestantes.”</p>
+        </div>
+    </div>
+</section>
+
+<!-- Ofertão Irresistível -->
+<section>
+    <h2>Consulta Personalizada + Guia dos 10 Passos</h2>
+    <p>Inclui avaliação completa do seu caso, plano personalizado dos 10 passos, acompanhamento por 30 dias e garantia de resultados ou dinheiro de volta.</p>
+    <p class="price">3x de R$ 6,30 ou R$ 17,90 à vista</p>
+    <a class="button" href="https://pay.cakto.com.br/z2ybhvn_525824">Eu quero meu ebook</a>
+    <p>Ou nos chame no WhatsApp: <a href="https://wa.me/5571985096367" style="color:#ff5722;">55 (71) 98509-6367</a></p>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <p>Saúde e Bem Estar</p>
+    <p>© 2025 Saúde e Bem Estar. Todos os direitos reservados.</p>
+    <p><a href="#">Políticas de Privacidade</a></p>
+    <p><a href="https://www.instagram.com/receitassaudaveiseseubemstar">Instagram</a></p>
+</footer>
+
+</body>
+</html>
