@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saúde e Bem Estar - 10 Passos para Desligar a Azia</title>
+<style>
+/* Reset e tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Cabeçalho Hero */
+header {
+  background: linear-gradient(135deg, rgba(255, 87, 34, 0.9), rgba(230, 74, 25, 0.9)), 
+              url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+header > * {
+  position: relative;
+  z-index: 2;
+}
+
+header img { 
+  max-width: 120px; 
+  margin-bottom: 30px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+header h1 { 
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  line-height: 1.2;
+  max-width: 1000px;
+}
+
+header p { 
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 40px;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  max-width: 600px;
+}
+
+header .cta-button {
+  background: linear-gradient(45deg, #ff5722, #e64a19);
+  color: white;
+  padding: 18px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header .cta-button:hover { 
+  background: linear-gradient(45deg, #e64a19, #d84315);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 87, 34, 0.6);
+  animation: pulse 2s infinite;
+}
+
+/* Seções */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeUp 1s ease;
+}
+
+section h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #ff5722, #e64a19);
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Seção Problema */
+.problem-section {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 20px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(45deg, #ff5722, #e64a19);
+}
+
+.problem-list {
+  list-style: none;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.problem-list li {
+  padding: 15px 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 40px;
+  color: #555;
+  animation: slideInLeft 0.8s ease;
+}
+
+.problem-list li::before {
+  content: '❌';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  font-size: 1.2rem;
+}
+
+/* Seção Verdade */
+.truth-section {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  border-radius: 20px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.truth-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(45deg, #ff9800, #f57c00);
+}
+
+/* Grid de cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(45deg, #ff5722, #e64a19);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover { 
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 87, 34, 0.2);
+  border-color: #ff5722;
+}
+
+.card img { 
+  max-width: 80px; 
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Timeline / Transformação */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.timeline-item {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-left: 5px solid #ff5722;
+  transition: all 0.3s ease;
+  animation: slideInRight 0.8s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 12px 35px rgba(255, 87, 34, 0.2);
+}
+
+.timeline-item strong {
+  color: #ff5722;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Depoimentos */
+.testimonials {
+  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 60px 20px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 4rem;
+  color: #ff5722;
+  font-family: serif;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 15px;
+  text-align: left;
+  padding-top: 20px;
+}
+
+.testimonial-card strong {
+  color: #ff5722;
+  font-size: 1.1rem;
+}
+
+/* Seção Oferta */
+.offer-section {
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+  border-radius: 20px;
+  margin: 40px auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(45deg, #4caf50, #388e3c);
+}
+
+.benefits-list {
+  list-style: none;
+  max-width: 600px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.benefits-list li {
+  padding: 10px 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 40px;
+  color: #555;
+}
+
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-size: 1.3rem;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Preço destaque */
+.price { 
+  font-size: 2.5rem;
+  color: #ff5722;
+  margin: 30px 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.price-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Botões de ação */
+.button {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff5722, #e64a19);
+  color: white;
+  padding: 20px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 20px 10px;
+}
+
+.button:hover { 
+  background: linear-gradient(45deg, #e64a19, #d84315);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 87, 34, 0.6);
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-link {
+  color: #25d366;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: #128c7e;
+  text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+  background: linear-gradient(135deg, #333, #555);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+footer p {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+footer a { 
+  color: #ff5722;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #e64a19;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    padding: 80px 20px;
+    min-height: 80vh;
+  }
+  
+  section {
+    padding: 60px 15px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .timeline-item {
+    padding: 20px;
+  }
+  
+  .problem-list,
+  .benefits-list {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  .price {
+    font-size: 2rem;
+  }
+  
+  .button {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animações de entrada */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- Cabeçalho Hero -->
+<header>
+    <img src="https://via.placeholder.com/120x120/ff5722/ffffff?text=LOGO" alt="Logo Saúde e Bem Estar">
+    <h1>Saúde e Bem Estar: Como Pequenas Mudanças Diárias Podem Desligar a Azia Crônica e Devolver o Prazer de Comer em Menos de 30 Dias</h1>
+    <p>"Liberte-se da queimação e recupere o prazer de comer com nosso método cientificamente comprovado em 30 dias."</p>
+    <a href="#oferta" class="cta-button">Quero Me Livrar da Azia →</a>
+</header>
+
+<!-- Seção O Problema -->
+<section class="problem-section animate-on-scroll">
+    <h2>Você Reconhece Estes Sinais de Alerta?</h2>
+    <p>Aquela queimação que sobe pela garganta não é 'normal'. É um sinal de alerta do seu sistema digestivo que está pedindo socorro.</p>
+    <p><strong>Você já se reconheceu em alguma dessas situações?</strong></p>
+    <ul class="problem-list">
+        <li>Noites mal dormidas por causa da azia que não passa</li>
+        <li>Evitar seus pratos favoritos por medo da queimação</li>
+        <li>Dependência crescente de antiácidos que só mascaram o problema</li>
+        <li>Sensação de que sua qualidade de vida está sendo roubada pela azia</li>
+    </ul>
+    <p>Se você respondeu 'sim' para pelo menos uma dessas situações, saiba que você não está sozinho. <strong>Milhões de pessoas sofrem diariamente com esse problema</strong>, mas a boa notícia é que existe uma solução natural e definitiva.</p>
+</section>
+
+<!-- Seção A Verdade que Poucos Contam -->
+<section class="truth-section animate-on-scroll">
+    <h2>A Verdade que Poucos Contam Sobre os Antiácidos</h2>
+    <p>Aqui está uma verdade que a indústria farmacêutica não quer que você saiba: <strong>antiácidos não curam a azia</strong>. Eles apenas silenciam o alarme por alguns instantes, enquanto a causa real continua danificando seu esôfago.</p>
+    <p>É como desligar o alarme de incêndio sem apagar o fogo. O problema continua lá, crescendo silenciosamente.</p>
+    <p><strong>Pior ainda:</strong> o uso contínuo de antiácidos pode criar dependência e até mesmo piorar o problema a longo prazo, pois seu estômago passa a produzir ainda mais ácido para compensar.</p>
+    <p>Mas aqui está a boa notícia que vai mudar sua vida: <strong>você pode desligar esse alarme para sempre</strong> com pequenas mudanças diárias que atacam a raiz do problema, não apenas os sintomas.</p>
+</section>
+
+<!-- Seção 10 Passos com ícones -->
+<section class="animate-on-scroll">
+    <h2>Os 10 Passos Cientificamente Comprovados para uma Vida Livre da Azia</h2>
+    <p>Depois de anos de pesquisa e centenas de casos de sucesso, desenvolvemos um método simples mas poderoso que ataca as verdadeiras causas da azia. Não são truques ou soluções milagrosas - são mudanças baseadas em ciência que seu corpo vai agradecer.</p>
+    <div class="grid">
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/meal.png" alt="Refeições fracionadas">
+            <h3>1. Fracione suas refeições</h3>
+            <p>Comer pequenas porções a cada 3 horas reduz drasticamente a pressão sobre o estômago e minimiza o refluxo. É como dar uma folga para seu sistema digestivo trabalhar com eficiência.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/bed.png" alt="Elevação da cabeceira">
+            <h3>2. Elevação da cabeceira</h3>
+            <p>Dormir com a cabeça elevada 15-20 cm usa a gravidade a seu favor, impedindo que o ácido suba durante a noite. Uma mudança simples que pode transformar suas noites.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/no-coffee.png" alt="Identifique gatilhos">
+            <h3>3. Identifique seus gatilhos pessoais</h3>
+            <p>Cada pessoa tem seus gatilhos únicos. Café, chocolate, álcool e frituras são os mais comuns, mas descobrir os seus específicos é fundamental para o sucesso.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/tea.png" alt="Chás calmantes">
+            <h3>4. Chás calmantes naturais</h3>
+            <p>Gengibre, camomila e erva-doce não são apenas bebidas - são medicamentos naturais que acalmam seu sistema digestivo e reduzem a produção excessiva de ácido.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/clock.png" alt="Timing das refeições">
+            <h3>5. Timing perfeito das refeições</h3>
+            <p>Não comer 3 horas antes de dormir e mastigar devagar não são apenas 'dicas de vovó' - são estratégias cientificamente comprovadas para facilitar a digestão.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/apple.png" alt="Alimentos alcalinizantes">
+            <h3>6. Alimentos alcalinizantes</h3>
+            <p>Banana, maçã, batata-doce e vegetais verdes funcionam como 'bombeiros' naturais, neutralizando a acidez excessiva do seu estômago.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/water.png" alt="Hidratação inteligente">
+            <h3>7. Hidratação inteligente</h3>
+            <p>Beber água entre as refeições - não durante - evita diluir os sucos digestivos, permitindo que seu estômago trabalhe com máxima eficiência.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/scale.png" alt="Controle do peso">
+            <h3>8. Controle inteligente do peso</h3>
+            <p>Manter um peso saudável reduz a pressão abdominal que literalmente empurra o ácido para cima. Cada quilo perdido é um alívio para seu esôfago.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/walking.png" alt="Movimento pós-refeição">
+            <h3>9. Movimento pós-refeição</h3>
+            <p>Caminhadas leves após as refeições não são apenas exercício - são terapia digestiva que acelera o esvaziamento gástrico e previne o refluxo.</p>
+        </div>
+        <div class="card">
+            <img src="https://img.icons8.com/ios-filled/80/ff5722/relax.png" alt="Gestão do estresse">
+            <h3>10. Gestão do estresse</h3>
+            <p>O estresse é um dos maiores vilões da azia. Técnicas simples de relaxamento podem reduzir drasticamente a produção de ácido causada pela ansiedade.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Transformação em 30 Dias -->
+<section class="animate-on-scroll">
+    <h2>Sua Jornada de Transformação: O Que Esperar nos Próximos 30 Dias</h2>
+    <p>Não estamos prometendo milagres da noite para o dia. Estamos prometendo uma transformação gradual e sustentável que você vai sentir semana após semana:</p>
+    <div class="timeline">
+        <div class="timeline-item">
+            <strong>Primeiros 7 Dias - O Alívio Começa</strong>
+            <p>Redução significativa da queimação noturna. Você finalmente conseguirá dormir sem ser acordado pela azia. Suas noites voltarão a ser tranquilas e reparadoras.</p>
+        </div>
+        <div class="timeline-item">
+            <strong>Após 14 Dias - A Liberdade Cresce</strong>
+            <p>Menor dependência de antiácidos. Você notará que não precisa mais correr para a farmácia toda semana. Sua energia e disposição aumentarão naturalmente.</p>
+        </div>
+        <div class="timeline-item">
+            <strong>Após 21 Dias - A Confiança Retorna</strong>
+            <p>Retorno gradual aos seus pratos favoritos - mas agora com sabedoria e confiança. Você saberá exatamente como comer o que ama sem sofrer as consequências.</p>
+        </div>
+        <div class="timeline-item">
+            <strong>Após 30 Dias - A Transformação Completa</strong>
+            <p>Vida sem azia, sono reparador e prazer de comer completamente restaurado. Você se tornará uma pessoa diferente - mais feliz, mais saudável e mais confiante.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Depoimentos -->
+<section class="testimonials animate-on-scroll">
+    <h2>Histórias Reais de Pessoas que Transformaram Suas Vidas</h2>
+    <div class="grid">
+        <div class="testimonial-card">
+            <p>Sofria com refluxo há mais de 5 anos. Já tinha tentado de tudo - remédios, dietas malucas, até acupuntura. Em menos de um mês seguindo os 10 passos, finalmente posso comer pizza com meus filhos e dormir tranquila. Não é exagero dizer que mudou minha vida!</p>
+            <strong>Ana Claudia, 42 anos, Professora</strong>
+        </div>
+        <div class="testimonial-card">
+            <p>As náuseas constantes estavam afetando meu trabalho e meu casamento. Eu vivia mal-humorado e cansado. Agora como de tudo, durmo como um bebê e minha esposa diz que eu voltei a ser o homem que ela se casou.</p>
+            <strong>Carlos Eduardo, 38 anos, Empresário</strong>
+        </div>
+        <div class="testimonial-card">
+            <p>Durante minha segunda gravidez, as náuseas eram insuportáveis. Os médicos diziam que era 'normal', mas eu sabia que não era. Os 10 passos me salvaram! Consegui aproveitar minha gravidez e agora recomendo para todas as gestantes que conheço.</p>
+            <strong>Mariana, 29 anos, Gestante</strong>
+        </div>
+    </div>
+</section>
+
+<!-- Ofertão Irresistível -->
+<section id="oferta" class="offer-section animate-on-scroll">
+    <h2>Sua Consulta Personalizada + Guia Completo dos 10 Passos</h2>
+    <p>Não queremos que você enfrente essa jornada sozinho. Por isso, criamos um pacote completo que inclui:</p>
+    <ul class="benefits-list">
+        <li>Avaliação completa e personalizada do seu caso específico</li>
+        <li>Plano personalizado dos 10 passos adaptado ao seu estilo de vida</li>
+        <li>Acompanhamento direto por 30 dias via WhatsApp</li>
+        <li>Guia digital completo com receitas e dicas práticas</li>
+        <li>Garantia incondicional de 30 dias - resultados ou seu dinheiro de volta</li>
+    </ul>
+    <p class="price">3x de R$ 6,30</p>
+    <p class="price-subtitle">ou R$ 17,90 à vista</p>
+    <p>Isso é menos do que você gasta em antiácidos em um mês, mas com resultados que durarão para toda a vida.</p>
+    <a class="button" href="https://pay.cakto.com.br/z2ybhvn_525824">Eu Quero Transformar Minha Vida Agora</a>
+    <p style="margin-top: 30px;">Prefere falar conosco primeiro? Chame no WhatsApp: <a href="https://wa.me/5571985096367" class="whatsapp-link">55 (71) 98509-6367</a></p>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <p><strong>Saúde e Bem Estar</strong> - Transformando vidas através de pequenas mudanças diárias</p>
+    <p>© 2025 Saúde e Bem Estar. Todos os direitos reservados.</p>
+    <p><a href="#">Políticas de Privacidade</a> | <a href="https://www.instagram.com/receitassaudaveiseseubemstar">Instagram</a></p>
+</footer>
+
+<script>
+// Animação de scroll
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('animated');
+        }
+    });
+}
+
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
+
+// Smooth scroll para links internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+
